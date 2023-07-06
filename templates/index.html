@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<style>
+        body {
+            background-color:#EAE5DC;
+            color:black;
+            font-family: "Arial", sans-serif;
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        h2 {
+            text-align: center
+        }
+
+        .champs {
+            border: 1px solid grey;
+            border-radius: 6px;
+            padding: 6px;
+
+        }
+
+        p {
+            color: solid grey;
+        }
+</style>
+
+
+<head>
+	<title>Traitement d'image - NSI - JOLY Marine - BORDES Clovis</title>
+</head>
+
+<body>
+	<h1>Projet 2 NSI</h1>
+	<h2>Client / serveur traitement d'image - étape 1</h2>
+	<h2>JOLY Marine - BORDES Clovis</h2>
+	<div>
+		<form method=["GET","POST"] action="/" id="form" name="form" class="formulaire">
+			<select name="filtre" id="filtre" name="filtre" class="champs">
+    <option value="please">--Choisir une option--</option>
+    <option value="bruit">Bruit-30</option>
+    <option value="symAxeVertical">Symétrie verticale</option>
+    <option value="variation_s_g">Saturation vert</option>
+    <option value="filtreEmbossage">Filtre d'embossage</option>
+    <option value="filtreContraste">Filtre réhausseur de contraste</option>
+    </select>
+      <div>
+          <label for="picsum">Générer une image aléatoire :</label>
+          <input type="checkbox" id="picsum" name="picsum" class="champs">
+      </div>
+    <div>
+      <label for="file">Choisissez votre image à traiter :</label>
+      <input type="file" id="file" name="file" accept="image/png, image/jpeg" class="champs">
+    </div>
+    <div>
+      <button type="submit" class="bouton" id="envoi" name="envoi">Envoyer la requête au serveur</button>
+    </div>
+  </form>
+  </div>
+
+  
+  <div>
+  <img id="imageOriginale" src="static/originale.jpg?q={{hasard}}" class="image">
+  <img id="imageTraitee" src="static/traitement.jpg?q={{hasard}}" class="image">
+  </div>
+
+  <div>
+    <p> Pour choisir une image aléatoire, on coche la case et on clique sur submit. Pour choisir un filtre, on en sélectionne un dans le volet déroulant et on clique sur submit. Pour choisir un fichier, on choisi son fichier grâce à l'input de type file et on clique sur submit. Si on ne sélectionne aucune image, alors on retombe sur celle de l'Hermione. <br>
+    Pour les versions du devoir : les étapes 1 et 2 fonctionnent avec la version actuelle. <br>Il y a eu un essais pour l'étape 3 (voir code joint à Classroom dans le fichier .txt) mais je n'ai pas réussi à faire fonctionner l'étape 3 ... </p>
+  </div>
+
+</body>
+<script>
+  // Votre code javascript côté client sera écrit ici
+   const form = document.getElementById("form");
+   const filtre = document.getElementById("filtre");
+   const picsum = document.getElementById("picsum");
+   const file = document.getElementById("file");
+
+   function soumettre(event) {
+     formulaire.submit()
+   }
+
+</script>
+
+</html>
